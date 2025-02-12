@@ -28,7 +28,7 @@ const PhotoCarousel = ({ selectedPhotoProject, photoProjects }) => {
                 flexDirection: "column",
                 alignItems: "center",
                 position: "relative",
-                height: "100vh"
+                height: "90vh"
             }}
         >
             {/* Carousel Container */}
