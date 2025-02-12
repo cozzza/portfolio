@@ -29,6 +29,19 @@ export default function Home() {
     return () => clearTimeout(timer); // Cleanup timeout if component unmounts
   }, []); // Runs only once when component mounts
 
+  const preloadImages = (imageUrls) => {
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+    });
+  };
+  
+  useEffect(() => {
+    if (photoProjects[selectedPhotoProject]?.images) {
+      preloadImages(photoProjects[selectedPhotoProject].images);
+    }
+  }, [selectedPhotoProject]);
+
   const projects = {
     FirstTimelastTime: {
       name: "First Time, Last Time",
@@ -200,9 +213,9 @@ export default function Home() {
       </Box>
 
       {/* Scrollable Videos Section */}
-      {/* <Typography variant="h5" color="white" textAlign="left" mb={4} marginLeft={"2rem"} marginTop={"2rem"}>
-          Videos
-        </Typography> */}
+       <Typography variant="h5" color="white" textAlign="left" mb={4} marginLeft={"5rem"} marginTop={"2rem"}>
+          Video
+        </Typography> 
       <Box
         sx={{
           padding: "2rem",
@@ -210,7 +223,7 @@ export default function Home() {
           overflowX: "hidden",
           display: "flex",
           justifyContent: "center",
-
+          height: '90vh'
         }}
       >
         <Box
@@ -299,9 +312,9 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-      {/* <Typography variant="h5" color="white" textAlign="left" mb={4} marginLeft={"2rem"} marginTop={"2rem"}>
+      <Typography variant="h5" color="white" textAlign="left" mb={4} marginLeft={"5rem"} marginTop={"2rem"} >
           Fotografia
-        </Typography> */}
+        </Typography> 
       {/* Scrollable Photos Section */}
       <Box
         sx={{
