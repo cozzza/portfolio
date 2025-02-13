@@ -10,9 +10,16 @@ const theme = createTheme({
     allVariants: {
       fontFamily: 'monospace',
       textTransform: 'none',
-      
     },
   },
+
+  palette: {
+    background: {
+      default: "#000",
+    },
+  },
+
+  
 });
 
 export default function Home() {
@@ -102,54 +109,31 @@ export default function Home() {
 
 
   <style jsx global>{`
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: monspace;
-    }
-  
     html, body {
-      width: 100%;
-      overflow-x: hidden;
-      background: transparent !important;
-      font-family: monspace;
-    }
-  
-    p, h1, h2, h3, h4, h5, a {
-      font-family: monspace;
-    }
-  
-    /* Custom scrollbar styles */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-  
-    ::-webkit-scrollbar-thumb {
-      background: transparent;
-    }
-  
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-  
-    html {
-      scrollbar-width: thin;
-      scrollbar-color: transparent transparent;
-    }
+  background-color: black !important;
+
+}
+
+html, body {
+  height: 100%;
+}
   `}</style>
 
 
   return (
     <ThemeProvider theme={theme}>
     <Box
+    
       sx={{
         width: "100%",
         overflowX: "hidden", // Prevents horizontal scroll
         overflowY: "auto",
         scrollBehavior: "smooth",
+        
       }}
     >
+
+
       {/* Fullscreen Section */}
       <Box
         sx={{
@@ -211,9 +195,9 @@ export default function Home() {
         </motion.div>
         )}
       </Box>
-
+      <div style={{ minHeight: "100vh", backgroundColor: "black" }}>
       {/* Scrollable Videos Section */}
-       <Typography variant="h5" color="white" textAlign="left" mb={4} marginLeft={"5rem"} marginTop={"2rem"}>
+       <Typography variant="h5" color="white" textAlign="left" mb={4} marginLeft={"5rem"} paddingTop={"3rem"}>
           Video
         </Typography> 
       <Box
@@ -374,10 +358,12 @@ export default function Home() {
         </Box>
       </Box>
       <footer style={{
-                  display: "flex", justifyContent:"space-evenly", padding: "1em", marginTop:"2rem", borderTop: "solid 1px white"
+                  display: "flex", justifyContent:"space-evenly", padding: "1em", marginTop:"2rem", borderTop: "solid 1px white", color:'white'
                 }}>
       <a href="https://instagram.com/___cle00">instagram</a> <a href="https://www.behance.net/JULIETACOZZA">behance</a><a href="https://github.com/cozzza">github</a><a href="mailto:julietacozza@gmail.com">email</a> <a href="https://wa.me/541165123544">contacto</a> 
     </footer>
+
+    </div>
     </Box>
 
     </ThemeProvider>
